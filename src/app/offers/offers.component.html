@@ -1,0 +1,22 @@
+<h1>Ajánlataink</h1>
+<p-table [value]="ingatlanok">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Kategória</th>
+            <th>Leírás</th>
+            <th>Hirdetés dátuma</th>
+            <th>Tehermentes</th>
+            <th>Fénykép</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-ingatlan>
+        <tr>
+            <td>{{ingatlan.kategoriaNev}}</td>
+            <td>{{ingatlan.leiras}}</td>
+            <td>{{ingatlan.hirdetesDatuma}}</td>
+            <td *ngIf="ingatlan.tehermentes">igen</td>
+            <td *ngIf="!ingatlan.tehermentes">nem</td>
+            <td><img src="{{ingatlan.kepUrl}}" alt="" title=""/></td>
+        </tr>
+    </ng-template>
+</p-table>
