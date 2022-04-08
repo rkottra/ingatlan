@@ -23,12 +23,7 @@ export class IngatlanService {
 
   insertIngatlan(ingatlan:ingatlanModel):Observable<any> {
     var seged = {
-      "id":0,
-      "kategoriaId": 2,
-      "kategoria": {
-        "id":2,
-        "megnevezes":"cyscyxcy",
-      },
+      "kategoriaId": Number(ingatlan.kategoriaId),
       "leiras": ingatlan.leiras,
       "hirdetesDatuma": ingatlan.hirdetesDatuma,
       "tehermentes": ingatlan.tehermentes,
